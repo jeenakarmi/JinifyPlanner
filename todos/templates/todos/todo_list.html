@@ -33,7 +33,7 @@
                         <h1 class = "display-5 color "><i class ="fas fa-check-circle"></i> Jinify Planner</h1>  <!-- for title --> 
                     </div>
                     <div class="card-body">
-                        <form action="" autocomplete="off">
+                        <form action="/insert_todo/"  method= "post" autocomplete="off"> {% csrf_token %}
                             <div class="input-group">       <!-- hold form input elements -->
 
                                 <!-- input control & input field look consistent with the rest of the form -->
