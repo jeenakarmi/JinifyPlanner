@@ -33,24 +33,32 @@
                         <h1 class = "display-5 color "><i class ="fas fa-check-circle"></i> Jinify Planner</h1>  <!-- for title --> 
                     </div>
                     <div class="card-body">
-                        <form action="/insert_todo/"  method= "post" autocomplete="off">  <!-- url to which post form datas-->
-                            {% csrf_token %}  
-                            <div class="input-group">       <!-- hold form input elements -->
-
-                                <!-- input control & input field look consistent with the rest of the form -->
-                                <input type="text" class="form-control" name="content">  <!--every form control has name to identify data in serverside-->
-
-                                  <div class="input-group-append">   <!--for submit button -->
-                                    <span class="input-group-text bg-white py-0"> <!-- py-0 remove vertical padding --> 
-                                        <button type="submit" class="btn btn-lg text-info">
-                                            <i class="fa fa-plus-circle fa-lg color"></i>
-                                    </button>
-                                </span>
-                            </div>
-
-                            </div>
-                            
-                        </form>
+                        
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <form action="/insert_todo/"  method= "post" autocomplete="off">  <!-- url to which post form datas-->
+                                    {% csrf_token %}  
+                                    <div class="input-group">       <!-- hold form input elements -->
+        
+                                        <!-- input control & input field look consistent with the rest of the form -->
+                                        <input type="text" class="form-control" name="content">  <!--every form control has name to identify data in serverside-->
+        
+                                          <div class="input-group-append">   <!--for submit button -->
+                                            <span class="input-group-text bg-white py-0"> <!-- py-0 remove vertical padding --> 
+                                                <button type="submit" class="btn btn-lg text-info">
+                                                    <i class="fa fa-plus-circle fa-lg color"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+        
+                                    </div>
+                                    
+                                </form>
+                            </li>
+                            {% for todo in todo_list %}
+                            <li class="list-group-item">{{todo.content}}</li>
+                            {% endfor %}
+                        </ul>
                     </div>
 
 
