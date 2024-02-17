@@ -57,6 +57,11 @@
                             </li>
                             {% for todo in todo_list %}
                             <li class="list-group-item">{{todo.content}}</li>
+                            {% empty %}
+                            <li class="list-group-item">
+                                <span class="font-italic"> Oops! It looks like there are no plans in your Jinify planner. Time to start adding some!
+                                </span>
+                            </li>
                             {% endfor %}
                         </ul>
                     </div>
