@@ -21,9 +21,11 @@ from .models import Todo
 def list_todo_items(request):
     return render(request, 'todos/todo_list.html')
 
-def insert_todo_item(request: HttpRequest):
-    todo = Todo(content=request.POST['content'])
-    todo.save()
+def insert_todo_item(request: HttpRequest): #type httpreq
+
+    # todo is obj of model inside todo
+    todo = Todo(content=request.POST['content'])    #retrieve data from content from req parameter
+    todo.save()                                      # save above function
     return redirect('list_todo_items')
 
 
