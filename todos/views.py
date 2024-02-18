@@ -19,7 +19,7 @@ from .models import Todo
 # Create your views here.
 
 def list_todo_items(request):
-    context = {'todo_list': Todo.objects.all() }
+    context = {'todo_list': Todo.objects.all() }    # pass datas from view function to template
     return render(request, 'todos/todo_list.html',context)
 
 def insert_todo_item(request: HttpRequest): #type httpreq

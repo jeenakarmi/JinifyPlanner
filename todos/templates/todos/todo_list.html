@@ -34,7 +34,7 @@
                     </div>
                     <div class="card-body">
                         
-                        <ul class="list-group">
+                        <ul class="list-group">  <!-- unordered list -->
                             <li class="list-group-item">
                                 <form action="/insert_todo/"  method= "post" autocomplete="off">  <!-- url to which post form datas-->
                                     {% csrf_token %}  
@@ -55,14 +55,17 @@
                                     
                                 </form>
                             </li>
-                            {% for todo in todo_list %}
-                            <li class="list-group-item">{{todo.content}}</li>
-                            {% empty %}
-                            <li class="list-group-item">
-                                <span class="font-italic"> Oops! It looks like there are no plans in your Jinify planner. Time to start adding some!
+
+                            <!-- iterate to list that have passed from view function todo_list. -->
+                             {% for todo in todo_list %}        <!-- jinja for loop -->
+                            <li class="list-group-item">{{todo.content}}</li>   <!-- to show task -->
+                            
+                            {% empty %}     <!--empty notification-->
+                            <li class="list-group-item">  <!-- if no list of todo -->
+                                <span class="font-italic"> Oops! It looks like there are no plans in your Jinify planner. Time to start adding some! 
                                 </span>
                             </li>
-                            {% endfor %}
+                            {% endfor %}   <!-- for ending forloop -->
                         </ul>
                     </div>
 
