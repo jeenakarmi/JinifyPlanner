@@ -58,8 +58,22 @@
 
                             <!-- iterate to list that have passed from view function todo_list. -->
                              {% for todo in todo_list %}        <!-- jinja for loop -->
-                            <li class="list-group-item">{{todo.content}}</li>   <!-- to show task -->
-                            
+
+                            <!--Wrap todo content and delete button in a flex container to control the positioning of delete icon and todo content-->
+                            <!-- setting justify-content: space-between; in the flex container to keep at end. -->
+                            <li class="list-group-item d-flex justify-content-between align-items-center">  
+                                <span>{{ todo.content }}</span>
+
+                                <form action="" method="post">
+                                    {% csrf_token %} 
+                                    <button type="submit" class="btn">
+                                        <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                                    </button>
+                                </form>
+                                
+                                
+
+                            </li>   <!-- to show task -->
                             {% empty %}     <!--empty notification-->
                             <li class="list-group-item">  <!-- if no list of todo -->
                                 <span class="font-italic"> Oops! It looks like there are no plans in your Jinify planner. Time to start adding some! 
