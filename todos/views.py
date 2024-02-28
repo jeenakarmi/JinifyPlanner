@@ -29,6 +29,11 @@ def insert_todo_item(request: HttpRequest): #type httpreq
     todo.save()                                      # save above function
     return redirect('list_todo_items')
 
+def delete_todo_item(request,todo_id):  #id of todo to be deleted 
 
-
+    #finding record to be deleted
+    todo_to_delete = Todo.objects.get(id=todo_id)   #passing value of id. function parameter todo_id
+    
+    todo_to_delete.delete()
+    return redirect('list_todo_items')  # redirect list route
 
