@@ -11,6 +11,13 @@ This is a simple To-Do application built using Django framework with PostgreSQL 
 - PostgreSQL
 - psycopg2
 
+### Install Dependencies:
+
+1. Install the project dependencies within the virtual environment:
+
+    ```
+    pip install -r requirement.txt
+    ```
 
 ## ✨ Features
 
